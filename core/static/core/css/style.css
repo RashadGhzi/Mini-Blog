@@ -1,0 +1,24 @@
+div ul li a {
+    margin: 0 25px;
+    color: white;
+}
+
+div ul li {
+    list-style-type: none;
+}
+
+div ul li a:hover {
+    color: rgb(192, 190, 190);
+}
+
+.logo {
+    text-decoration: none;
+    font-weight: lighter;
+    font-size: 30px;
+    color: rgb(216, 216, 216);
+    font-family: monospace;
+}
+
+p {
+    text-align: justify;
+}

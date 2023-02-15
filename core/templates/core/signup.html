@@ -1,0 +1,17 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="container col-sm-4 my-5" >
+        <form action="" method="post" novalidate>
+            {% csrf_token %}
+            {% for signupForm in signupForm %}
+                <div class="text-white mb-3">
+                    {{signupForm.label_tag}}
+                    {{signupForm}}
+                    <small class="text-danger">{{signupForm.errors|striptags}}</small>
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-outline-light px-5">confirm</button>
+        </form>
+    </div>
+{% endblock content %}

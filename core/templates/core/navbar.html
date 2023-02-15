@@ -1,0 +1,21 @@
+
+{% load static %}
+<div class="container d-flex flex-row justify-content-between mt-5 align-items-center">
+    <a href="{% url 'home' %}" class="logo">
+        Mini Blog
+    </a>
+    <ul class="d-flex flex-row px-5">
+        <li><a href="{% url 'home' %}" class="text-decoration-none">Home</a></li>
+        <li><a href="{% url 'about' %}" class="text-decoration-none">About</a></li>
+        <li><a href="{% url 'contact' %}" class="text-decoration-none">Contact</a></li>
+        {% if request.user.is_superuser %}
+            <li><a href="{% url 'dashboard' %}" class="text-decoration-none">Dashboard</a></li>
+        {% endif %}
+        {% if request.user.is_authenticated %}
+            <li><a href="{% url 'logout' %}" class="text-decoration-none">LogOut</a></li>
+        {% else %}
+            <li><a href="{% url 'signup' %}" class="text-decoration-none">SignUp</a></li>
+            <li><a href="{% url 'login' %}" class="text-decoration-none">LogIn</a></li>
+        {% endif %}
+    </ul>
+</div>
